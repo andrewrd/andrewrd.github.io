@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <link href='style/style.css' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  	<script src="js/jquery-1.11.3.min.js"></script>
+  </head>
+  <script>
+
+$(document).ready(function(e) { // do not delete this line
+
+// This animates the navigation bar. If the user scrolls below 30px, ab animation is triggered.
+ $(window).scroll(function(e){
+    // here the bar is id'ed myBar
+    if ($(this).scrollTop() > 30) { // choose the value you want.
+            $('nav').stop().animate({"padding" : "10px"});
+            $('nav').css({"background" : "rgba(0,0,0,0.3)"});
+            $('#logo').css({"font-size" : "18px"});
+    } else {
+        $('nav').stop().animate({"padding":"30px"});
+        $('nav').css({"background" : "transparent"});
+        $('#logo').css({"font-size" : "22px"});
+    }
+});
+
+  $('.scroll a').click(function(e) {
+    e.preventDefault();
+    var ob = $( $(this).attr('href') ).offset().top ;
+    $('html,body').stop().animate({
+        scrollTop: ob
+      },
+      {
+        duration: 800
+      })
+  });
+
+}); // do not delete this line
+</script>
+
+  <body>
+
+<nav>
+   <ul id="nav-norm" class="navbar">
+      <li class="logo"><a href="index.html">andrewrd</a></li>
+      <li class="scroll"><a href="#timeline-one">Projects</a></li>
+      <li><a href="about.html">Contact</a></li>
+      <li><a href="contact.html">Blog</a></li>
+   </ul>
+</nav>
+
+<header>
+  <div class="container">
+	   <h1>andrewrd</h1>
+	   <h5>Full Stack Web Developer</h5>
+ 	   <a href=".section-w" class="btn-scroll"><img src="img/arrow.png"></a>
+  </div>
+</header>
+
+<section>
+  <div class="section-w">
+ 	<h1> Projects </h1>
+  <a href=".section-w" class="item"><img src="img/project-one.jpg" alt="Project One" height="200" width="400"></a>
+
+
+  <a href=".section-w" class="item"><img src="img/project-two.jpg" alt="Project Two" height="200" width="400"></a>
+
+
+  <a href=".section-w" class="item"><img src="img/project-three.jpg" alt="Project Three" height="200" width="400"></a>
+
+
+  <a href=".section-w" class="item"><img src="img/project-four.jpg" alt="Project Four" height="200" width="400"></a>
+
+ </div>
+</section>
+
+<footer>
+  <div id="footer-links">
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
